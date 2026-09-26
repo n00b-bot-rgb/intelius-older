@@ -42,6 +42,10 @@ The tests can be run by entering in the root path
 
 * nosetests tests
 
+To display print output while tests run:
+
+* nosetests --nocapture tests
+
 To check whether the code is intact.
 
 # Contributors #
