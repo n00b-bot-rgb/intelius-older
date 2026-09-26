@@ -3,7 +3,8 @@ name: Pipeline
 on:
   push:
     branches:
-      - "**"
+      - main
+      - master
   pull_request:
   workflow_dispatch:
 
@@ -37,4 +38,4 @@ jobs:
         run: python -m compileall spider using_mechanize tests
 
       - name: Run tests
-        run: nosetests -s tests/__init__.py
+        run: nosetests -s tests
