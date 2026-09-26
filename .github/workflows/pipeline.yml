@@ -38,4 +38,4 @@ jobs:
         run: python -m compileall spider using_mechanize tests
 
       - name: Run tests
-        run: nosetests -s tests
+        run: nosetests tests
