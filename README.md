@@ -21,7 +21,7 @@ All libraries are pinned for Python 2.7 compatibility.
 
 A GitHub Actions workflow is available at:
 
-**/home/runner/work/intelius-older/intelius-older/.github/workflows/pipeline.yml**
+**.github/workflows/pipeline.yml**
 
 It performs:
 
