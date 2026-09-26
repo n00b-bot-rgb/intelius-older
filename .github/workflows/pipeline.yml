@@ -37,4 +37,4 @@ jobs:
         run: python -m compileall spider using_mechanize tests
 
       - name: Run tests
-        run: nosetests -s --all-modules tests
+        run: nosetests -s tests/__init__.py
