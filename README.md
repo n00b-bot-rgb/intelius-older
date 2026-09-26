@@ -11,13 +11,23 @@ The objective of the project is to scrap the user phone number, email and addres
 
 # Installation #
 
-All the libraries associated with the project is in the requirements.txt. Use:
+Clone the repository, then install dependencies:
 
 **pip install -r requirements.txt**
 
-to install all the dependent libraries.
+All libraries are pinned for Python 2.7 compatibility.
 
-All the libraries has been tested in python 2.7
+# Pipeline and Workflow #
+
+A GitHub Actions workflow is available at:
+
+**/home/runner/work/intelius-older/intelius-older/.github/workflows/pipeline.yml**
+
+It performs:
+
+* dependency installation
+* source compilation checks
+* test execution with `nosetests -s`
 
 # API Reference #
 
