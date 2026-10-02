@@ -1,0 +1,40 @@
+name: Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  install-and-validate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    container:
+      image: python:2.7-buster
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install system build dependencies
+        run: |
+          apt-get update
+          apt-get install -y --no-install-recommends \
+            build-essential \
+            libxml2-dev \
+            libxslt1-dev \
+            zlib1g-dev
+
+      - name: Install python dependencies
+        run: |
+          pip install "pip<21"
+          pip install -r requirements.txt
+
+      - name: Compile source
+        run: python -m compileall spider using_mechanize tests
+
+      - name: Run tests
+        run: nosetests tests
